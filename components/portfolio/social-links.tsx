@@ -1,12 +1,17 @@
 import Link from "next/link"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail, GraduationCap } from "lucide-react"
 
 const links = [
   { href: "https://github.com/TejPotu", label: "GitHub", icon: Github },
   {
-    href: "https://linkedin.com/in/tejpotu",
+    href: "https://linkedin.com/in/teja-potu-770a5b168",
     label: "LinkedIn",
     icon: Linkedin,
+  },
+  {
+    href: "https://scholar.google.com/citations?user=ofE-11UAAAAJ&hl=en",
+    label: "Google Scholar",
+    icon: GraduationCap,
   },
   { href: "mailto:tejpotu@gmail.com", label: "Email", icon: Mail },
 ]

@@ -12,10 +12,33 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Teja Potu - ML Engineer & Researcher",
+  title: "Teja Potu | AI/ML PhD Researcher",
   description:
-    "Portfolio of Teja Potu - Machine Learning Engineer specializing in speech processing, deep learning, and AI systems.",
-    generator: 'v0.app'
+    "PhD researcher at Florida State University specializing in Agentic AI, LLMs, and computational biology. Published in Analytical Chemistry and MDPI Mathematics.",
+  keywords: [
+    "AI/ML",
+    "PhD researcher",
+    "Agentic AI",
+    "LLM",
+    "computational biology",
+    "mass spectrometry",
+    "graph neural networks",
+    "machine learning",
+  ],
+  authors: [{ name: "Teja Potu" }],
+  openGraph: {
+    title: "Teja Potu | AI/ML PhD Researcher",
+    description:
+      "PhD researcher building AI systems that reason, act, and publish. Published in Analytical Chemistry and MDPI Mathematics.",
+    type: "website",
+    siteName: "Teja Potu",
+  },
+  twitter: {
+    card: "summary",
+    title: "Teja Potu | AI/ML PhD Researcher",
+    description:
+      "PhD researcher building AI systems that reason, act, and publish.",
+  },
 }
 
 export default function RootLayout({

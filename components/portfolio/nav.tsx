@@ -6,9 +6,12 @@ import { Menu, X } from "lucide-react"
 import { ThemeToggle } from "./theme-toggle"
 
 const sections = [
+  { id: "about", label: "About" },
   { id: "research", label: "Research" },
+  { id: "publications", label: "Papers" },
+  { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "skills", label: "Technologies" },
+  { id: "skills", label: "Skills" },
   { id: "contact", label: "Contact" },
 ] as const
 
