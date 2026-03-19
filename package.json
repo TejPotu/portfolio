@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
-    "start": "next start"
+    "start": "next start",
+    "resume": "cd docs/resume && pdflatex -interaction=nonstopmode resume.tex && cd ../.. && cp docs/resume/resume.pdf public/resume.pdf"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

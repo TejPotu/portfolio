@@ -1,0 +1,120 @@
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{geometry} % Document margins
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\name{Teja Potu} % Your name
+% You can merge both of these into a single line, if you do not have a website.
+\address{+1(448) 867-2621 \\ \href{mailto:tejpotu@gmail.com}{tejpotu@gmail.com} \\ Tallahassee, FL}
+\address{
+    \href{https://www.linkedin.com/in/teja-potu/}{linkedin.com/in/teja-potu} \\
+    \href{https://github.com/TejPotu}{github.com/TejPotu} \\
+    \href{https://tejapotu.com}{tejapotu.com}
+}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+{\bf Doctor of Philosophy in Computer Science}, Florida State University, GPA: 3.92\hfill {Jan 23 - Dec 27(Expected)}
+%Minor in Linguistics \smallskip \\
+%Member of Eta Kappa Nu \\
+%Member of Upsilon Pi Epsilon \\
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% TECHINICAL STRENGTHS	
+%----------------------------------------------------------------------------------------
+% \begin{rSection}{SKILLS}
+% Python, C/C++, Java, PyTorch (DDP, mixed precision), TensorFlow, HuggingFace, NumPy, Pandas, Scikit-learn,
+% HPC (SLURM, multi-GPU), Generative AI (GANs, Diffusion), Reinforcement Learning, LLM Fine-tuning, Signal
+% Processing, Git
+% \end{rSection}
+\begin{rSection}{SKILLS}
+\begin{tabular}{@{} >{\bfseries}l @{\hspace{0.5em}} c @{\hspace{0.5em}} l}
+Languages          & : & Python, C/C++, Java, TypeScript, JavaScript, SQL \\
+ML \& DL           & : & PyTorch (DDP, AMP), TensorFlow, Hugging Face, Scikit-learn, GNN, RL, GANs \\
+LLMs \& NLP        & : & Transformer architectures, RAG, prompt engineering, LangChain, ChromaDB, SciBERT \\
+Frameworks         & : & FastAPI, React, Next.js, CrewAI \\
+Data \& Tools      & : & NumPy, Pandas, MLflow, Docker, Git, Firebase, PostgreSQL \\
+Systems            & : & AWS (EC2, S3, Lambda, SageMaker), GCP, Docker, HPC (SLURM), CI/CD, REST APIs \\
+\end{tabular}
+\end{rSection}
+%----------------------------------------------------------------------------------------
+% WORK EXPERIENCE
+%----------------------------------------------------------------------------------------
+\begin{rSection}{EXPERIENCE}
+\vspace{-1.25em}
+
+% ---------- Research Assistant ----------
+\item \textbf{Research Assistant [National High Magnetic Field Laboratory]} \hfill {May 2024 -- Present}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Built \textbf{GraphAttribution}, a graph-based ML pipeline achieving \textbf{97\% accuracy} and \textbf{10× faster runtime} for molecular formula assignment in high-resolution mass spectrometry.
+
+    \item Designed an \textbf{autonomous LLM-powered analysis system} using \textbf{RAG}, \textbf{tool-using agents}, and domain-tuned prompts (LangChain + ChromaDB), deployed on \textbf{AWS} (EC2, S3, Lambda) as a \textbf{FastAPI service} for end-to-end mass-spectrometry data interpretation.
+\end{itemize}
+
+% ---------- Graduate Teaching Assistant ----------
+\item \textbf{Graduate Teaching Assistant [Florida State University]} \hfill {Jan 2024 -- May 2024}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item  Assisted in teaching \textbf{Coding Bootcamp} and \textbf{Introduction to Programming (Python)} courses, mentoring students and designing hands-on coding assignments.
+\end{itemize}
+
+% ---------- Thesis Research Experience ----------
+\item \textbf{Researcher (Master’s Thesis) — Single-Cell Clustering} \hfill {Dec 2023 -- Dec 2024}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Developed a \textbf{tumor-clone clustering method} increasing accuracy from \textbf{22\% to 84\%} by modeling single-cell genomic data as graphs and applying an \textbf{attention-based GCN}, processing datasets with \textbf{10K+ cells}.
+\end{itemize}
+
+% ---------- Industry Experience (Meeami Technologies) ----------
+\item \textbf{Graduate Software Engineer [Meeami Technologies]} \hfill {Aug 2021 -- Dec 2022}
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Improved on-device \textbf{deep learning inference by 44\%} through profiling, operator-level optimization, and SIMD kernel engineering; integrated into a \textbf{C++ production SDK} deployed across mobile and embedded.
+
+    \item Built \textbf{10× smaller} speech models with \textbf{16\% quality improvement}, using \textbf{MLflow} for experiment tracking, model versioning, and \textbf{automated CI/CD pipelines} for reproducible training and deployment.
+\end{itemize}
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+% Projects
+%----------------------------------------------------------------------------------------
+\begin{rSection}{SELECTED PROJECTS}
+\vspace{-0.125em}
+
+\begin{itemize}
+    \itemsep -3pt {}
+    \item Built \textbf{CaseTwin}, a full-stack clinical decision-support platform (React + FastAPI + Firebase) that automates case matching and referral documentation using \textbf{CrewAI agents}, \textbf{medical image RAG}, and a \textbf{MedGemma endpoint on AWS} (EC2 + SageMaker), reducing a 4-hour workflow to \textbf{~5 minutes}.
+
+    \item Developed \textbf{Questory}, a narrative-driven EdTech platform (TypeScript + FastAPI + Firebase) using \textbf{Google Gemini Live API} for real-time interactive storytelling, deployed on \textbf{GCP}.
+
+    \item Built \textbf{CheckUp}, a WhatsApp-based AI assistant (Python + Twilio + LLM) that automates daily wellness check-ins for elderly parents, supporting \textbf{multilingual conversations}, medication reminders, and real-time health alerts for remote caregivers.
+
+\end{itemize}
+
+\end{rSection}
+% \begin{rSection}{PROJECTS}
+% \vspace{-0.125em}
+
+% \begin{itemize}
+%     \itemsep -3pt {} 
+%     \item Built a GAN-based deep learning model for \textbf{image super-resolution}, enhancing low-quality images by 4× while preserving high-fidelity textures and perceptual quality.
+%     \item Implemented and compared \textit{Monte Carlo}, \textit{TD($\lambda$)}, and \textit{linear function approximation} methods on the \textbf{Blackjack} environment to study convergence and sample efficiency of RL algorithms.
+%     \item Implemented a Deep Q-Network (DQN) agent for the \textbf{Lunar Lander} task in OpenAI Gym, experimented with target networks and $\epsilon$-greedy exploration.
+% \end{itemize}
+
+\begin{rSection}{PUBLICATIONS}
+\begin{itemize}
+\item T. Potu et al. \textit{SCGclust: Single Cell Graph Clustering Using Graph Autoencoders Integrating SNVs and CNAs}. bioRxiv, 2025.
+\end{itemize}
+\end{rSection}
+
+\end{document}

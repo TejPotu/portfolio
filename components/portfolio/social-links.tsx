@@ -4,7 +4,7 @@ import { Github, Linkedin, Mail, GraduationCap } from "lucide-react"
 const links = [
   { href: "https://github.com/TejPotu", label: "GitHub", icon: Github },
   {
-    href: "https://linkedin.com/in/teja-potu-770a5b168",
+    href: "https://linkedin.com/in/teja-potu/",
     label: "LinkedIn",
     icon: Linkedin,
   },
