@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
-import { ArrowUpRight, ArrowDown, Download, BookOpen, Briefcase } from "lucide-react"
+import { ArrowUpRight, ArrowDown, Download, BookOpen, Briefcase, Trophy, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 import profilePicture from "../docs/images/headshot_purple.jpg"
@@ -25,6 +25,7 @@ const featuredProjects: Project[] = [
     language: "TypeScript",
     featured: true,
     category: "Health AI",
+    award: "MedGemma Impact Challenge Winner",
   },
   {
     title: "Questory",
@@ -287,6 +288,21 @@ const publications = [
   },
 ]
 
+const awards = [
+  {
+    title: "Agentic Workflow Prize",
+    competition: "MedGemma Impact Challenge",
+    organizer: "Google Health AI × Kaggle",
+    date: "March 2026",
+    project: "CaseTwin",
+    description:
+      "Won the Agentic Workflow Prize for CaseTwin — a clinical decision-support system that matches acute chest X-rays with historical \"twins\" and uses an agentic workflow to accelerate referrals, turning an hours-long manual retrieval process into a few minutes in rural hospitals.",
+    highlight: "850+ competing teams worldwide",
+    blogLink: "https://blog.google/innovation-and-ai/technology/health/med-gemma-impact-challenge/",
+    writeupLink: "https://www.kaggle.com/competitions/med-gemma-impact-challenge/writeups/new-writeup-1771703368723",
+  },
+]
+
 const experience = [
   {
     type: "education" as const,
@@ -353,6 +369,7 @@ const sectionIds = [
   "about",
   "research",
   "publications",
+  "awards",
   "experience",
   "projects",
   "skills",
@@ -629,6 +646,118 @@ export default function Portfolio() {
 
                 <div className="pointer-events-none absolute -bottom-12 -right-12 h-32 w-32 rounded-full bg-primary/10 opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100" />
               </a>
+            ))}
+          </div>
+        </div>
+        </FadeIn>
+      </section>
+
+      {/* ===== Awards ===== */}
+      <section id="awards" className="relative z-10 scroll-mt-20 py-24 lg:py-32">
+        <SectionAuroraAccent position="left" />
+        <FadeIn>
+        <div className="mx-auto max-w-screen-xl px-6 lg:px-10">
+          <div className="mb-16 max-w-2xl">
+            <span className="text-sm font-semibold uppercase tracking-widest text-amber-500 dark:text-amber-400">
+              Awards
+            </span>
+            <h2 className="mt-3 text-3xl font-bold tracking-tight text-foreground sm:text-4xl text-balance">
+              Recognition
+            </h2>
+          </div>
+
+          <div className="grid gap-6">
+            {awards.map((award) => (
+              <div
+                key={award.title}
+                className="group relative overflow-hidden rounded-3xl p-[1px]"
+              >
+                {/* Animated shimmer border */}
+                <div
+                  className="absolute inset-0 rounded-3xl animate-shimmer"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, transparent, hsla(45, 93%, 47%, 0.3), hsla(36, 100%, 50%, 0.4), hsla(45, 93%, 47%, 0.3), transparent)",
+                    backgroundSize: "200% 100%",
+                  }}
+                  aria-hidden="true"
+                />
+                {/* Card inner */}
+                <div className="relative rounded-3xl border border-amber-400/20 bg-gradient-to-br from-amber-500/10 via-card/98 to-yellow-500/5 p-8 backdrop-blur-sm lg:p-10">
+                  {/* Decorative glow */}
+                  <div
+                    className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full opacity-20 blur-3xl"
+                    style={{
+                      background:
+                        "radial-gradient(circle, hsla(45, 93%, 47%, 0.4) 0%, transparent 70%)",
+                    }}
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="pointer-events-none absolute -bottom-16 -left-16 h-36 w-36 rounded-full opacity-10 blur-3xl"
+                    style={{
+                      background:
+                        "radial-gradient(circle, hsla(36, 100%, 50%, 0.4) 0%, transparent 70%)",
+                    }}
+                    aria-hidden="true"
+                  />
+
+                  <div className="relative flex flex-col gap-6 lg:flex-row lg:items-start lg:gap-8">
+                    {/* Trophy icon */}
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-amber-400/20 bg-gradient-to-br from-amber-500/20 to-yellow-400/10">
+                      <Trophy className="h-8 w-8 text-amber-500 dark:text-amber-400 animate-trophy-glow" />
+                    </div>
+
+                    <div className="flex-1 space-y-4">
+                      <div>
+                        <div className="flex flex-wrap items-center gap-3">
+                          <h3 className="text-2xl font-bold text-foreground lg:text-3xl">
+                            {award.title}
+                          </h3>
+                          <span className="rounded-full bg-amber-500/15 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+                            Winner
+                          </span>
+                        </div>
+                        <p className="mt-1.5 text-base font-medium text-amber-600 dark:text-amber-400">
+                          {award.competition}
+                        </p>
+                        <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+                          <span>{award.organizer}</span>
+                          <span className="hidden sm:inline">·</span>
+                          <span>{award.date}</span>
+                          <span className="hidden sm:inline">·</span>
+                          <span className="font-medium text-foreground">{award.highlight}</span>
+                        </div>
+                      </div>
+
+                      <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+                        {award.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-3 pt-1">
+                        <a
+                          href={award.blogLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full border border-amber-400/20 bg-amber-500/10 px-5 py-2.5 text-sm font-semibold text-amber-600 dark:text-amber-400 transition-all hover:bg-amber-500/20 hover:border-amber-400/40 hover:shadow-lg hover:shadow-amber-500/10"
+                        >
+                          <ExternalLink className="h-4 w-4" />
+                          Google Blog Post
+                        </a>
+                        <a
+                          href={award.writeupLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-card/60 px-5 py-2.5 text-sm font-semibold text-foreground backdrop-blur-sm transition-all hover:border-primary/30 hover:bg-card"
+                        >
+                          <ArrowUpRight className="h-4 w-4" />
+                          Kaggle Writeup
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>

@@ -146,3 +146,21 @@
     transform: translateY(-12px) translateX(8px);
   }
 }
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes trophy-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px hsla(45, 93%, 47%, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px hsla(45, 93%, 47%, 0.6));
+  }
+}

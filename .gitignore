@@ -36,3 +36,15 @@ docs/resume/*.fdb_latexmk
 
 # old resume PDF (compiled version goes to public/)
 docs/resume/resume_teja_potu_1112.pdf
+docs/.DS_Store
+
+# macOS
+.DS_Store
+*/.DS_Store
+
+# AI agents
+.gemini/
+.claude/
+
+docs/*.md
+

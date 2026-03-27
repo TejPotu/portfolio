@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowUpRight, Star, GitFork } from "lucide-react"
+import { ArrowUpRight, Star, GitFork, Trophy } from "lucide-react"
 
 export interface Project {
   title: string
@@ -12,6 +12,7 @@ export interface Project {
   language?: string
   featured?: boolean
   category?: string
+  award?: string
 }
 
 export function ProjectCard({ project }: { project: Project }) {
@@ -87,6 +88,12 @@ export function FeaturedProjectCard({ project }: { project: Project }) {
       rel="noopener noreferrer"
       className="group relative flex flex-col overflow-hidden rounded-3xl border border-border/60 bg-gradient-to-br from-primary/10 via-card/95 to-accent/10 p-8 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 lg:p-10"
     >
+      {project.award && (
+        <div className="mb-3 inline-flex w-fit items-center gap-1.5 rounded-full border border-amber-400/30 bg-gradient-to-r from-amber-500/15 via-yellow-400/10 to-amber-500/15 px-3.5 py-1.5 text-xs font-bold text-amber-500 dark:text-amber-400 shadow-sm shadow-amber-500/10">
+          <Trophy className="h-3.5 w-3.5 animate-trophy-glow" />
+          {project.award}
+        </div>
+      )}
       {project.category && (
         <span className="mb-4 inline-flex w-fit items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
           {project.category}

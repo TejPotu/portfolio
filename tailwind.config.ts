@@ -111,6 +111,8 @@ const config: Config = {
         'aurora-pulse': 'aurora-pulse 8s ease-in-out infinite',
         'float-slow': 'float-slow 6s ease-in-out infinite',
         'float-medium': 'float-medium 5s ease-in-out infinite',
+        'shimmer': 'shimmer 3s linear infinite',
+        'trophy-glow': 'trophy-glow 3s ease-in-out infinite',
       },
     },
   },
