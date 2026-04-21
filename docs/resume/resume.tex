@@ -21,7 +21,7 @@
 
 \begin{rSection}{Education}
 
-{\bf Doctor of Philosophy in Computer Science}, Florida State University, GPA: 3.92\hfill {Jan 23 - Dec 27(Expected)}
+{\bf Doctor of Philosophy in Computer Science}, Florida State University, GPA: 3.92\hfill {Jan '23 - Dec '27 (Expected)}
 %Minor in Linguistics \smallskip \\
 %Member of Eta Kappa Nu \\
 %Member of Upsilon Pi Epsilon \\
@@ -39,9 +39,9 @@
 \begin{tabular}{@{} >{\bfseries}l @{\hspace{0.5em}} c @{\hspace{0.5em}} l}
 Languages          & : & Python, C/C++, Java, TypeScript, JavaScript, SQL \\
 ML \& DL           & : & PyTorch (DDP, AMP), TensorFlow, Hugging Face, Scikit-learn, GNN, RL, GANs \\
-LLMs \& NLP        & : & Transformer architectures, RAG, prompt engineering, LangChain, ChromaDB, SciBERT \\
+LLMs \& NLP        & : & Transformer architectures, RAG, LangChain, ChromaDB, LLM Evaluation, SciBERT \\
 Frameworks         & : & FastAPI, React, Next.js, CrewAI \\
-Data \& Tools      & : & NumPy, Pandas, MLflow, Docker, Git, Firebase, PostgreSQL \\
+Data \& Tools      & : & NumPy, Pandas, MLflow, Git, Firebase, PostgreSQL \\
 Systems            & : & AWS (EC2, S3, Lambda, SageMaker), GCP, Docker, HPC (SLURM), CI/CD, REST APIs \\
 \end{tabular}
 \end{rSection}
@@ -55,23 +55,11 @@ Systems            & : & AWS (EC2, S3, Lambda, SageMaker), GCP, Docker, HPC (SLU
 \item \textbf{Research Assistant [National High Magnetic Field Laboratory]} \hfill {May 2024 -- Present}
 \begin{itemize}
     \itemsep -3pt {}
-    \item Built \textbf{GraphAttribution}, a graph-based ML pipeline achieving \textbf{97\% accuracy} and \textbf{10× faster runtime} for molecular formula assignment in high-resolution mass spectrometry.
+    \item \textbf{Graph-Based Formula Attribution Engine}: Engineered a graph algorithm using weighted mass-difference networks and \textbf{Dijkstra-style max-heap traversal} to attribute molecular formulas across thousands of nodes, with cross-component discovery, instrument precision models, and isotope envelope pattern matching — resolving \textbf{$>$90\% of spectra} and cutting manual workflows from \textbf{days to minutes}.
 
-    \item Designed an \textbf{autonomous LLM-powered analysis system} using \textbf{RAG}, \textbf{tool-using agents}, and domain-tuned prompts (LangChain + ChromaDB), deployed on \textbf{AWS} (EC2, S3, Lambda) as a \textbf{FastAPI service} for end-to-end mass-spectrometry data interpretation.
-\end{itemize}
+    \item \textbf{LLM Auto-Analysis Agent}: Built a multi-provider \textbf{tool-calling agent} (Anthropic, OpenAI, Gemini, Ollama) that autonomously calibrates spectra, tunes parameters, and identifies \textbf{chemical composition of unknown samples} — enabling \textbf{zero-code analysis} for domain scientists.
 
-% ---------- Graduate Teaching Assistant ----------
-\item \textbf{Graduate Teaching Assistant [Florida State University]} \hfill {Jan 2024 -- May 2024}
-\begin{itemize}
-    \itemsep -3pt {}
-    \item  Assisted in teaching \textbf{Coding Bootcamp} and \textbf{Introduction to Programming (Python)} courses, mentoring students and designing hands-on coding assignments.
-\end{itemize}
-
-% ---------- Thesis Research Experience ----------
-\item \textbf{Researcher (Master’s Thesis) — Single-Cell Clustering} \hfill {Dec 2023 -- Dec 2024}
-\begin{itemize}
-    \itemsep -3pt {}
-    \item Developed a \textbf{tumor-clone clustering method} increasing accuracy from \textbf{22\% to 84\%} by modeling single-cell genomic data as graphs and applying an \textbf{attention-based GCN}, processing datasets with \textbf{10K+ cells}.
+    \item \textbf{MassWiki}: Built a \textbf{Claude-powered} skill-based knowledge base for mass spectrometry research. Natural-language commands drive paper ingestion, cross-linking, and auditing — revealing \textbf{research gaps} and novel ideas by cross-referencing existing work.
 \end{itemize}
 
 % ---------- Industry Experience (Meeami Technologies) ----------
@@ -92,11 +80,13 @@ Systems            & : & AWS (EC2, S3, Lambda, SageMaker), GCP, Docker, HPC (SLU
 
 \begin{itemize}
     \itemsep -3pt {}
-    \item Built \textbf{CaseTwin}, a full-stack clinical decision-support platform (React + FastAPI + Firebase) that automates case matching and referral documentation using \textbf{CrewAI agents}, \textbf{medical image RAG}, and a \textbf{MedGemma endpoint on AWS} (EC2 + SageMaker), reducing a 4-hour workflow to \textbf{~5 minutes}.
+    \item Built \textbf{CaseTwin}, a clinical decision-support platform (\textbf{CrewAI agents}, medical image \textbf{RAG}, \textbf{MedGemma} on AWS) that automates case matching and referral docs, reducing a 4-hour workflow to \textbf{~5 min}. \textbf{Won Agentic Workflow Prize} — Google MedGemma Impact Challenge (\textbf{850+ teams}).
 
     \item Developed \textbf{Questory}, a narrative-driven EdTech platform (TypeScript + FastAPI + Firebase) using \textbf{Google Gemini Live API} for real-time interactive storytelling, deployed on \textbf{GCP}.
 
     \item Built \textbf{CheckUp}, a WhatsApp-based AI assistant (Python + Twilio + LLM) that automates daily wellness check-ins for elderly parents, supporting \textbf{multilingual conversations}, medication reminders, and real-time health alerts for remote caregivers.
+
+    \item Developed \textbf{SCGclust}, a graph autoencoder framework integrating \textbf{SNVs and CNAs} for single-cell tumor-clone clustering, increasing accuracy from \textbf{22\% to 84\%} using an \textbf{attention-based GCN} on datasets with \textbf{10K+ cells}. Published in \textbf{MDPI Mathematics}.
 
 \end{itemize}
 
@@ -113,7 +103,8 @@ Systems            & : & AWS (EC2, S3, Lambda, SageMaker), GCP, Docker, HPC (SLU
 
 \begin{rSection}{PUBLICATIONS}
 \begin{itemize}
-\item T. Potu et al. \textit{SCGclust: Single Cell Graph Clustering Using Graph Autoencoders Integrating SNVs and CNAs}. bioRxiv, 2025.
+\item \underline{T. Potu} et al. \textit{SCGclust: Single Cell Graph Clustering Using Graph Autoencoders Integrating SNVs and CNAs}. MDPI Mathematics, 2025.
+\item R.P. Rodgers, C.L. Hendrickson, ..., \underline{T. Potu}, et al. \textit{Internal Calibration without Internal Calibrants in FT-ICR Mass Spectrometry}. Analytical Chemistry, 2025.
 \end{itemize}
 \end{rSection}
 
