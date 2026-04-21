@@ -13,6 +13,8 @@ import {
 import { SocialLinks } from "@/components/portfolio/social-links"
 import { AuroraBackground, SectionAuroraAccent } from "@/components/portfolio/aurora-background"
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/portfolio/motion"
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 
 const featuredProjects: Project[] = [
   {
@@ -48,6 +50,17 @@ const featuredProjects: Project[] = [
     language: "Python",
     featured: true,
     category: "Cheminformatics",
+  },
+  {
+    title: "MassBot",
+    description: "Agentic mass spectrometry analysis with Claude",
+    longDescription:
+      "Jupyter-native conversational interface where researchers describe their data and a Claude-powered agent iteratively runs attribution, diagnoses error distributions, and adjusts parameters to optimize accuracy. Supports Anthropic, OpenAI, Gemini, and Ollama backends with multi-provider tool-calling.",
+    tech: ["Claude", "Claude Code", "Tool Use", "Mass Spectrometry", "Python", "LLM Agents"],
+    link: "https://github.com/TejPotu/MassBot",
+    language: "Python",
+    featured: true,
+    category: "Agentic AI",
   },
   {
     title: "SCGclust: Single-Cell Graph Clustering",
@@ -124,16 +137,6 @@ const projectGroups: { category: string; projects: Project[] }[] = [
         tech: ["Python", "WhatsApp API", "LLM", "Twilio"],
         link: "https://github.com/TejPotu/CheckUp",
         language: "Python",
-        category: "Agentic AI",
-      },
-      {
-        title: "MassBot",
-        description: "Agentic mass spectrometry analysis chatbot",
-        longDescription:
-          "Conversational AI agent for analyzing mass spectrometry data. Uses tool-calling to run spectral computations, interpret peaks, and surface compound insights through natural language.",
-        tech: ["LLM Agents", "Mass Spectrometry", "Python"],
-        link: "https://github.com/TejPotu/MassBot",
-        language: "Jupyter Notebook",
         category: "Agentic AI",
       },
       {
@@ -317,7 +320,7 @@ const experience = [
     org: "National High Magnetic Field Laboratory",
     date: "May 2024 – Present",
     detail:
-      "Built a graph-based molecular formula attribution engine for high-resolution mass spectrometry. Developing an autonomous LLM-orchestrated system that handles end-to-end spectral data analysis using tool-calling agents.",
+      "Built a novel BFS-propagation algorithm over mass-difference graphs for molecular formula assignment in FT-ICR mass spectrometry (97% accuracy, 10x faster). Designed a Claude-powered tool-calling agent that autonomously loads spectra, calibrates, tunes parameters, and generates diagnostic reports through natural-language interaction.",
   },
   {
     type: "work" as const,
@@ -326,14 +329,6 @@ const experience = [
     date: "Jan 2024 – May 2024",
     detail:
       "Taught Coding Bootcamp and Introduction to Programming (Python).",
-  },
-  {
-    type: "work" as const,
-    title: "Researcher — Master's Thesis",
-    org: "Single-Cell Clustering",
-    date: "Dec 2023 – Dec 2024",
-    detail:
-      "Developed a graph autoencoder framework integrating SNVs and CNAs for single-cell clustering, published in MDPI Mathematics.",
   },
   {
     type: "work" as const,
@@ -356,7 +351,7 @@ const skillGroups = [
   },
   {
     label: "LLMs & Agents",
-    items: ["LangChain", "CrewAI", "RAG", "ChromaDB", "Qdrant", "Prompt Engineering"],
+    items: ["LangChain", "CrewAI", "RAG", "ChromaDB", "Qdrant", "Eval Design"],
   },
   {
     label: "Infrastructure",
@@ -436,7 +431,7 @@ export default function Portfolio() {
             </div>
           </div>
           <span className="mb-6 inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary backdrop-blur-sm">
-            PhD Researcher
+            PhD Researcher | AI for Science
           </span>
 
           <h1 className="text-5xl font-bold leading-tight tracking-tight text-foreground sm:text-6xl md:text-7xl text-balance">
@@ -447,10 +442,10 @@ export default function Portfolio() {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-3xl mx-auto leading-relaxed">
-            Building intelligent systems at the intersection of{" "}
-            <span className="font-semibold text-primary">Agentic AI</span>,{" "}
-            <span className="font-semibold text-primary">LLMs</span>, and{" "}
-            <span className="font-semibold text-primary">Computational Biology</span>
+            Applying AI to accelerate scientific discovery — building agentic systems that reason through STEM problems with{" "}
+            <span className="font-semibold text-primary">LLM Agents</span>,{" "}
+            <span className="font-semibold text-primary">Claude</span>, and{" "}
+            <span className="font-semibold text-primary">Domain Tools</span>
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -498,10 +493,10 @@ export default function Portfolio() {
                 A bit about me
               </h2>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                {"I'm a PhD student in Computer Science at Florida State University, currently working as a Research Assistant at the National High Magnetic Field Laboratory. My research focuses on building agentic AI systems and applying graph-based machine learning to problems in computational biology and cheminformatics."}
+                {"I'm a PhD student in Computer Science at Florida State University, working at the National High Magnetic Field Laboratory where I build LLM-powered agents that automate scientific analysis workflows — from mass spectrometry interpretation to molecular attribution. I use Claude and Claude Code daily in my research and development, and I'm focused on understanding how frontier models reason through experimental STEM problems."}
               </p>
               <p className="mt-3 text-muted-foreground leading-relaxed">
-                {"I've published in Analytical Chemistry and MDPI Mathematics — and I'm actively seeking PhD internship opportunities in AI/ML and Data Science."}
+                {"I've published in Analytical Chemistry and MDPI Mathematics, won the MedGemma Impact Challenge (850+ teams), and I'm seeking opportunities to evaluate and extend AI capabilities for scientific discovery."}
               </p>
             </div>
             <div className="grid grid-cols-3 gap-4 lg:col-span-2">
@@ -545,43 +540,40 @@ export default function Portfolio() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid md:grid-cols-2 gap-8">
             {researchAreas.map((area) => (
-              <div
+              <Card
                 key={area.title}
-                className="group relative overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-primary/5 via-card/95 to-accent/5 p-8 backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+                className={`p-6 hover:shadow-lg hover:-translate-y-1 transition-all border-l-4 border-y-0 border-r-0 rounded-2xl bg-gradient-to-br from-primary/5 via-card/95 to-accent/5 backdrop-blur-sm ${
+                  area.color === "primary" ? "border-l-primary hover:shadow-primary/10" : "border-l-accent hover:shadow-accent/10"
+                }`}
               >
-                {/* Card aurora glow */}
-                <div
-                  className="pointer-events-none absolute -right-16 -top-16 h-32 w-32 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
-                  style={{
-                    background:
-                      area.color === "primary"
-                        ? "radial-gradient(circle, hsl(262 83% 58% / 0.15) 0%, transparent 70%)"
-                        : "radial-gradient(circle, hsl(172 66% 50% / 0.15) 0%, transparent 70%)",
-                  }}
-                />
-                <h3 className="text-lg font-semibold text-foreground">
-                  {area.title}
-                </h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  {area.description}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {area.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className={`rounded-full px-2.5 py-0.5 text-[11px] font-medium ${
-                        area.color === "primary"
-                          ? "bg-primary/10 text-primary"
-                          : "bg-accent/10 text-accent-foreground dark:text-accent"
-                      }`}
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
+                <CardHeader className="pb-4 pt-2 px-0">
+                  <CardTitle className={`text-2xl ${area.color === 'primary' ? 'text-primary' : 'text-accent-foreground dark:text-accent'}`}>
+                    {area.title}
+                  </CardTitle>
+                  <CardDescription className="text-base mt-3 leading-relaxed text-muted-foreground/90">
+                    {area.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="px-0 pb-2">
+                  <div className="flex flex-wrap gap-2">
+                    {area.tags.map((tag) => (
+                      <Badge 
+                        key={tag} 
+                        variant="secondary" 
+                        className={`text-sm font-medium ${
+                          area.color === "primary" 
+                            ? "bg-primary/10 text-primary hover:bg-primary/20" 
+                            : "bg-accent/10 text-accent-foreground dark:text-accent hover:bg-accent/20"
+                        }`}
+                      >
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>
@@ -954,7 +946,7 @@ export default function Portfolio() {
               {"Let's work together"}
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              {"I'm actively seeking PhD internship opportunities in AI/ML. Open to research collaborations, internship roles, or conversations about agentic AI and computational biology."}
+              {"I'm seeking opportunities to evaluate and extend AI capabilities for scientific discovery. Open to research collaborations and conversations about how LLM agents can accelerate STEM research."}
             </p>
 
             <div className="mt-10 flex flex-col items-center gap-6">
